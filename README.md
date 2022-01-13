@@ -6,13 +6,13 @@
 
 ### `npm link`
 
-在项目根目录下执行 npm link 将命令链接到全局执行环境
+在项目根目录下执行 `npm link` 将命令链接到全局执行环境
 
-在任意目录下执行package.json中bin下配置的命令
+在任意目录下执行`package.json`中`bin`下配置的命令
 
 ### `npm unlink`
 
-取消 npm link
+取消 `npm link`
 
 ## 项目结构
 ```js
