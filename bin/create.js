@@ -10,7 +10,14 @@ module.exports = async function(name, options) {
 
   if (fs.existsSync(targetDir)) {
     if (options.force) {
-      await fs.remove(targetDir)
+      console.log(chalk.cyan(`\r\nRemoving...`))
+      try {
+        await fs.remove(targetDir)
+      } catch(err) {
+        console.log('err：', err)
+        console.log(chalk.red('remove failed'))
+        return
+      }
     } else {
       let { action } = await inquirer.prompt([{
         name: 'action',
@@ -31,7 +38,13 @@ module.exports = async function(name, options) {
         return
       } else if (action === 'overwrite') {
         console.log(chalk.cyan(`\r\nRemoving...`))
-        await fs.remove(targetDir)
+        try {
+          await fs.remove(targetDir)
+        } catch(err) {
+          console.log('err：', err)
+          console.log(chalk.red('remove failed'))
+          return
+        }
       }
     }
   }

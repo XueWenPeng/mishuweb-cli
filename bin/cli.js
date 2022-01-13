@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const program = require('commander')
-const cretae = require('./create')
+const create = require('./create')
 const figlet = require('figlet')
 const chalk = require('chalk')
 
@@ -10,7 +10,7 @@ program
   .description('create a new project')
   .option('-f, --force', 'overwrite target directory if it exist')
   .action((name, options) => {
-    cretae(name, options)
+    create(name, options)
   })
 
 program
